@@ -12,23 +12,19 @@ public class App
 
         int gender;
         double alcohol, weight, time, ratio, BAC;
-        String strGender, strAlcohol, strWeight, strTime;
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Enter a 1 if you are a male or a 2 if you are a female: ");
-        strGender = sc.nextLine();
+        gender = sc.nextInt();
+
         System.out.print("How many ounces of alcohol did you have? ");
-        strAlcohol = sc.nextLine();
+        alcohol = sc.nextDouble();
+
         System.out.print("What is your weight, in pounds? ");
-        strWeight = sc.nextLine();
+        weight = sc.nextDouble();
+
         System.out.print("How many hours has it been since your last drink? ");
-        strTime = sc.nextLine();
-
-
-        gender = Integer.parseInt(strGender);
-        alcohol = Double.parseDouble(strAlcohol);
-        weight = Double.parseDouble(strWeight);
-        time = Double.parseDouble(strTime);
+        time = sc.nextDouble();
 
         if (gender == 1) {
             ratio = 0.73;
