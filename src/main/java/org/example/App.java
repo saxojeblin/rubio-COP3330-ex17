@@ -10,21 +10,66 @@ public class App
 {
     public static void main( String[] args ) {
 
-        int gender;
-        double alcohol, weight, time, ratio, BAC;
+        int gender = 0;
+        double alcohol = 0, weight = 0, time = 0, ratio, BAC;
         Scanner sc = new Scanner(System.in);
+        boolean check;
 
-        System.out.print("Enter a 1 if you are a male or a 2 if you are a female: ");
-        gender = sc.nextInt();
+        do   {
+            System.out.print("Enter a 1 if you are a male or a 2 if you are a female: ");
 
-        System.out.print("How many ounces of alcohol did you have? ");
-        alcohol = sc.nextDouble();
+            if(sc.hasNextInt())  {
+                gender = sc.nextInt();
+                check = true;
+            }
+            else {
+                System.out.print("You did not enter a numeric value. \n");
+                check = false;
+                sc.next();
+            }
+        } while(!(check));
 
-        System.out.print("What is your weight, in pounds? ");
-        weight = sc.nextDouble();
+        do   {
+            System.out.print("How many ounces of alcohol did you have? ");
 
-        System.out.print("How many hours has it been since your last drink? ");
-        time = sc.nextDouble();
+            if(sc.hasNextDouble())  {
+                alcohol = sc.nextDouble();
+                check = true;
+            }
+            else {
+                System.out.print("You did not enter a numeric value. \n");
+                check = false;
+                sc.next();
+            }
+        } while(!(check));
+
+        do   {
+            System.out.print("What is your weight, in pounds? ");
+
+            if(sc.hasNextDouble())  {
+                weight = sc.nextDouble();
+                check = true;
+            }
+            else {
+                System.out.print("You did not enter a numeric value. \n");
+                check = false;
+                sc.next();
+            }
+        } while(!(check));
+
+        do   {
+            System.out.print("How many hours has it been since your last drink? ");
+
+            if(sc.hasNextDouble())  {
+                time = sc.nextDouble();
+                check = true;
+            }
+            else {
+                System.out.print("You did not enter a numeric value. \n");
+                check = false;
+                sc.next();
+            }
+        } while(!(check));
 
         if (gender == 1) {
             ratio = 0.73;
